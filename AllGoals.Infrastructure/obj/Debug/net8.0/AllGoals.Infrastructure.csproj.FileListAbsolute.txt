@@ -1,0 +1,17 @@
+C:\Users\jenni\RiderProjects\AllGoals\AllGoals.Infrastructure\bin\Debug\net8.0\AllGoals.Infrastructure.deps.json
+C:\Users\jenni\RiderProjects\AllGoals\AllGoals.Infrastructure\bin\Debug\net8.0\AllGoals.Infrastructure.runtimeconfig.json
+C:\Users\jenni\RiderProjects\AllGoals\AllGoals.Infrastructure\bin\Debug\net8.0\AllGoals.Infrastructure.dll
+C:\Users\jenni\RiderProjects\AllGoals\AllGoals.Infrastructure\bin\Debug\net8.0\AllGoals.Infrastructure.pdb
+C:\Users\jenni\RiderProjects\AllGoals\AllGoals.Infrastructure\bin\Debug\net8.0\AllGoals.Domain.dll
+C:\Users\jenni\RiderProjects\AllGoals\AllGoals.Infrastructure\bin\Debug\net8.0\AllGoals.Domain.pdb
+C:\Users\jenni\RiderProjects\AllGoals\AllGoals.Infrastructure\obj\Debug\net8.0\AllGoals.Infrastructure.csproj.AssemblyReference.cache
+C:\Users\jenni\RiderProjects\AllGoals\AllGoals.Infrastructure\obj\Debug\net8.0\AllGoals.Infrastructure.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\jenni\RiderProjects\AllGoals\AllGoals.Infrastructure\obj\Debug\net8.0\AllGoals.Infrastructure.AssemblyInfoInputs.cache
+C:\Users\jenni\RiderProjects\AllGoals\AllGoals.Infrastructure\obj\Debug\net8.0\AllGoals.Infrastructure.AssemblyInfo.cs
+C:\Users\jenni\RiderProjects\AllGoals\AllGoals.Infrastructure\obj\Debug\net8.0\AllGoals.Infrastructure.csproj.CoreCompileInputs.cache
+C:\Users\jenni\RiderProjects\AllGoals\AllGoals.Infrastructure\obj\Debug\net8.0\AllGoals.D4AC5237.Up2Date
+C:\Users\jenni\RiderProjects\AllGoals\AllGoals.Infrastructure\obj\Debug\net8.0\AllGoals.Infrastructure.dll
+C:\Users\jenni\RiderProjects\AllGoals\AllGoals.Infrastructure\obj\Debug\net8.0\refint\AllGoals.Infrastructure.dll
+C:\Users\jenni\RiderProjects\AllGoals\AllGoals.Infrastructure\obj\Debug\net8.0\AllGoals.Infrastructure.pdb
+C:\Users\jenni\RiderProjects\AllGoals\AllGoals.Infrastructure\obj\Debug\net8.0\AllGoals.Infrastructure.genruntimeconfig.cache
+C:\Users\jenni\RiderProjects\AllGoals\AllGoals.Infrastructure\obj\Debug\net8.0\ref\AllGoals.Infrastructure.dll

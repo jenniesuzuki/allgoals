@@ -1,0 +1,11 @@
+C:\Users\jenni\RiderProjects\AllGoals\AllGoals.Domain\bin\Debug\net8.0\AllGoals.Domain.deps.json
+C:\Users\jenni\RiderProjects\AllGoals\AllGoals.Domain\bin\Debug\net8.0\AllGoals.Domain.dll
+C:\Users\jenni\RiderProjects\AllGoals\AllGoals.Domain\bin\Debug\net8.0\AllGoals.Domain.pdb
+C:\Users\jenni\RiderProjects\AllGoals\AllGoals.Domain\obj\Debug\net8.0\AllGoals.Domain.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\jenni\RiderProjects\AllGoals\AllGoals.Domain\obj\Debug\net8.0\AllGoals.Domain.AssemblyInfoInputs.cache
+C:\Users\jenni\RiderProjects\AllGoals\AllGoals.Domain\obj\Debug\net8.0\AllGoals.Domain.AssemblyInfo.cs
+C:\Users\jenni\RiderProjects\AllGoals\AllGoals.Domain\obj\Debug\net8.0\AllGoals.Domain.csproj.CoreCompileInputs.cache
+C:\Users\jenni\RiderProjects\AllGoals\AllGoals.Domain\obj\Debug\net8.0\AllGoals.Domain.dll
+C:\Users\jenni\RiderProjects\AllGoals\AllGoals.Domain\obj\Debug\net8.0\refint\AllGoals.Domain.dll
+C:\Users\jenni\RiderProjects\AllGoals\AllGoals.Domain\obj\Debug\net8.0\AllGoals.Domain.pdb
+C:\Users\jenni\RiderProjects\AllGoals\AllGoals.Domain\obj\Debug\net8.0\ref\AllGoals.Domain.dll

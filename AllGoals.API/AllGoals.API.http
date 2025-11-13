@@ -1,0 +1,6 @@
+@AllGoals.API_HostAddress = http://localhost:5216
+
+GET {{AllGoals.API_HostAddress}}/weatherforecast/
+Accept: application/json
+
+###
