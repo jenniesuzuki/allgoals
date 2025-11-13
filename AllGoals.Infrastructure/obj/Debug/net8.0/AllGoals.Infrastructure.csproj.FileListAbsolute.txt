@@ -15,3 +15,4 @@ C:\Users\jenni\RiderProjects\AllGoals\AllGoals.Infrastructure\obj\Debug\net8.0\r
 C:\Users\jenni\RiderProjects\AllGoals\AllGoals.Infrastructure\obj\Debug\net8.0\AllGoals.Infrastructure.pdb
 C:\Users\jenni\RiderProjects\AllGoals\AllGoals.Infrastructure\obj\Debug\net8.0\AllGoals.Infrastructure.genruntimeconfig.cache
 C:\Users\jenni\RiderProjects\AllGoals\AllGoals.Infrastructure\obj\Debug\net8.0\ref\AllGoals.Infrastructure.dll
+C:\Users\jenni\RiderProjects\allgoals\AllGoals.Infrastructure\obj\Debug\net8.0\AllGoals.Infrastructure.sourcelink.json

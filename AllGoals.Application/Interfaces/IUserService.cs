@@ -9,6 +9,4 @@ public interface IUserService
     Task<UserDtoResponse> CreateAsync(UserDtoRequest createRequestDto);
     Task<bool> UpdateAsync(int id, UserDtoRequest updateRequestDto);
     Task<bool> DeleteAsync(int id);
-    Task PromoteToAdminAsync(int id);
-    Task RevokeAdminAsync(int id);
 }

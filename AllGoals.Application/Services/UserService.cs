@@ -14,22 +14,22 @@ public class UserService : IUserService
         public async Task<UserDtoResponse> CreateAsync(UserDtoRequest dto)
         {
             var emailVO = new Email(dto.Email);
+
             var entity = new User(dto.Nome, emailVO);
 
-            if (dto.IsAdmin)
-            {
-                entity.PromoverParaAdmin();
-            }
-
             await _repo.AddAsync(entity);
-
-            return new UserDtoResponse
+            
+            var responseDto = new UserDtoResponse
             {
                 Id = entity.Id,
                 Nome = entity.Nome,
                 Email = entity.Email.Value,
                 IsAdmin = entity.IsAdmin
             };
+            
+            AddUserLinks(responseDto);
+
+            return responseDto;
         }
 
         public async Task<bool> UpdateAsync(int id, UserDtoRequest dto)
@@ -43,14 +43,6 @@ public class UserService : IUserService
             entity.AlterarNome(dto.Nome);
             entity.AlterarEmail(newEmailVO); 
 
-            if (dto.IsAdmin != entity.IsAdmin)
-            {
-                if (dto.IsAdmin)
-                    entity.PromoverParaAdmin();
-                else
-                    entity.RevogarAdmin();
-            }
-
             await _repo.UpdateAsync(entity);
             return true;
         }
@@ -61,25 +53,41 @@ public class UserService : IUserService
             if (entity is null)
                 return null;
 
-            return new UserDtoResponse
+            var responseDto = new UserDtoResponse
             {
                 Id = entity.Id,
                 Nome = entity.Nome,
                 Email = entity.Email.Value,
                 IsAdmin = entity.IsAdmin
             };
+            
+            AddUserLinks(responseDto);
+
+            return responseDto;
         }
 
         public async Task<IEnumerable<UserDtoResponse>> ListAsync()
         {
             var list = await _repo.ListAsync();
 
-            return list.Select(m => new UserDtoResponse
+            return list.Select(entity =>
             {
-                Id = m.Id,
-                Nome = m.Nome,
-                Email = m.Email.Value,
-                IsAdmin = m.IsAdmin
+                var dto = new UserDtoResponse
+                {
+                    Id = entity.Id,
+                    Nome = entity.Nome,
+                    Email = entity.Email.Value,
+                    IsAdmin = entity.IsAdmin
+                };
+                
+                dto.Links.Add(new LinkDto
+                {
+                    Rel = "self",
+                    Href = $"/api/users/{dto.Id}",
+                    Method = "GET"
+                });
+
+                return dto;
             }).ToList();
         }
 
@@ -93,21 +101,27 @@ public class UserService : IUserService
             return true;
         }
 
-        public async Task PromoteToAdminAsync(int id)
+        private void AddUserLinks(UserDtoResponse dto)
         {
-            var entity = await _repo.GetByIdAsync(id);
-            if (entity is null) return; 
-
-            entity.PromoverParaAdmin();
-            await _repo.UpdateAsync(entity);
-        }
-
-        public async Task RevokeAdminAsync(int id)
-        {
-            var entity = await _repo.GetByIdAsync(id);
-            if (entity is null) return; 
-
-            entity.RevogarAdmin();
-            await _repo.UpdateAsync(entity);
+            var id = dto.Id;
+            
+            dto.Links.Add(new LinkDto
+            {
+                Rel = "self",
+                Href = $"/api/users/{id}",
+                Method = "GET"
+            });
+            dto.Links.Add(new LinkDto
+            {
+                Rel = "update",
+                Href = $"/api/users/{id}",
+                Method = "PUT"
+            });
+            dto.Links.Add(new LinkDto
+            {
+                Rel = "delete",
+                Href = $"/api/users/{id}",
+                Method = "DELETE"
+            });
         }
 }

@@ -4,6 +4,8 @@ using Microsoft.AspNetCore.Mvc;
 
 namespace AllGoals.API.Controllers;
 
+[ApiController]
+[Route("api/[controller]")]
 public class UserController : ControllerBase
 {
     private readonly IUserService _userService;
@@ -87,30 +89,6 @@ public class UserController : ControllerBase
             if (!success)
                 return NotFound();
 
-            return NoContent();
-        }
-
-        /// <summary>
-        /// Promove um usuário a Administrador.
-        /// </summary>
-        [HttpPost("{id:int}/promote")]
-        [ProducesResponseType(204)]
-        [ProducesResponseType(404)]
-        public async Task<IActionResult> PromoteUser(int id)
-        {
-            await _userService.PromoteToAdminAsync(id);
-            return NoContent();
-        }
-
-        /// <summary>
-        /// Revoga os privilégios de Administrador de um usuário.
-        /// </summary>
-        [HttpPost("{id:int}/revoke")]
-        [ProducesResponseType(204)]
-        [ProducesResponseType(404)]
-        public async Task<IActionResult> RevokeUser(int id)
-        {
-            await _userService.RevokeAdminAsync(id);
             return NoContent();
         }
 }

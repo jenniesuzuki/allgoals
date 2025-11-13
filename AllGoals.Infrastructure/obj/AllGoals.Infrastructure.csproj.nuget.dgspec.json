@@ -1,31 +1,25 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\jenni\\RiderProjects\\AllGoals\\AllGoals.Infrastructure\\AllGoals.Infrastructure.csproj": {}
+    "C:\\Users\\jenni\\RiderProjects\\allgoals\\AllGoals.Infrastructure\\AllGoals.Infrastructure.csproj": {}
   },
   "projects": {
-    "C:\\Users\\jenni\\RiderProjects\\AllGoals\\AllGoals.Domain\\AllGoals.Domain.csproj": {
+    "C:\\Users\\jenni\\RiderProjects\\allgoals\\AllGoals.Domain\\AllGoals.Domain.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\jenni\\RiderProjects\\AllGoals\\AllGoals.Domain\\AllGoals.Domain.csproj",
+        "projectUniqueName": "C:\\Users\\jenni\\RiderProjects\\allgoals\\AllGoals.Domain\\AllGoals.Domain.csproj",
         "projectName": "AllGoals.Domain",
-        "projectPath": "C:\\Users\\jenni\\RiderProjects\\AllGoals\\AllGoals.Domain\\AllGoals.Domain.csproj",
+        "projectPath": "C:\\Users\\jenni\\RiderProjects\\allgoals\\AllGoals.Domain\\AllGoals.Domain.csproj",
         "packagesPath": "C:\\Users\\jenni\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\jenni\\RiderProjects\\AllGoals\\AllGoals.Domain\\obj\\",
+        "outputPath": "C:\\Users\\jenni\\RiderProjects\\allgoals\\AllGoals.Domain\\obj\\",
         "projectStyle": "PackageReference",
-        "fallbackFolders": [
-          "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
-        ],
         "configFilePaths": [
-          "C:\\Users\\jenni\\AppData\\Roaming\\NuGet\\NuGet.Config",
-          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
-          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
+          "C:\\Users\\jenni\\AppData\\Roaming\\NuGet\\NuGet.Config"
         ],
         "originalTargetFrameworks": [
           "net8.0"
         ],
         "sources": {
-          "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
           "https://api.nuget.org/v3/index.json": {}
         },
         "frameworks": {
@@ -43,8 +37,7 @@
           "enableAudit": "true",
           "auditLevel": "low",
           "auditMode": "direct"
-        },
-        "SdkAnalysisLevel": "9.0.200"
+        }
       },
       "frameworks": {
         "net8.0": {
@@ -65,40 +58,34 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\9.0.200/PortableRuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\8.0.416/PortableRuntimeIdentifierGraph.json"
         }
       }
     },
-    "C:\\Users\\jenni\\RiderProjects\\AllGoals\\AllGoals.Infrastructure\\AllGoals.Infrastructure.csproj": {
+    "C:\\Users\\jenni\\RiderProjects\\allgoals\\AllGoals.Infrastructure\\AllGoals.Infrastructure.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\jenni\\RiderProjects\\AllGoals\\AllGoals.Infrastructure\\AllGoals.Infrastructure.csproj",
+        "projectUniqueName": "C:\\Users\\jenni\\RiderProjects\\allgoals\\AllGoals.Infrastructure\\AllGoals.Infrastructure.csproj",
         "projectName": "AllGoals.Infrastructure",
-        "projectPath": "C:\\Users\\jenni\\RiderProjects\\AllGoals\\AllGoals.Infrastructure\\AllGoals.Infrastructure.csproj",
+        "projectPath": "C:\\Users\\jenni\\RiderProjects\\allgoals\\AllGoals.Infrastructure\\AllGoals.Infrastructure.csproj",
         "packagesPath": "C:\\Users\\jenni\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\jenni\\RiderProjects\\AllGoals\\AllGoals.Infrastructure\\obj\\",
+        "outputPath": "C:\\Users\\jenni\\RiderProjects\\allgoals\\AllGoals.Infrastructure\\obj\\",
         "projectStyle": "PackageReference",
-        "fallbackFolders": [
-          "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
-        ],
         "configFilePaths": [
-          "C:\\Users\\jenni\\AppData\\Roaming\\NuGet\\NuGet.Config",
-          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
-          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
+          "C:\\Users\\jenni\\AppData\\Roaming\\NuGet\\NuGet.Config"
         ],
         "originalTargetFrameworks": [
           "net8.0"
         ],
         "sources": {
-          "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
           "https://api.nuget.org/v3/index.json": {}
         },
         "frameworks": {
           "net8.0": {
             "targetAlias": "net8.0",
             "projectReferences": {
-              "C:\\Users\\jenni\\RiderProjects\\AllGoals\\AllGoals.Domain\\AllGoals.Domain.csproj": {
-                "projectPath": "C:\\Users\\jenni\\RiderProjects\\AllGoals\\AllGoals.Domain\\AllGoals.Domain.csproj"
+              "C:\\Users\\jenni\\RiderProjects\\allgoals\\AllGoals.Domain\\AllGoals.Domain.csproj": {
+                "projectPath": "C:\\Users\\jenni\\RiderProjects\\allgoals\\AllGoals.Domain\\AllGoals.Domain.csproj"
               }
             }
           }
@@ -112,8 +99,7 @@
           "enableAudit": "true",
           "auditLevel": "low",
           "auditMode": "direct"
-        },
-        "SdkAnalysisLevel": "9.0.200"
+        }
       },
       "frameworks": {
         "net8.0": {
@@ -124,6 +110,18 @@
               "suppressParent": "All",
               "target": "Package",
               "version": "[8.0.22, )"
+            },
+            "Microsoft.Extensions.Configuration": {
+              "target": "Package",
+              "version": "[10.0.0, )"
+            },
+            "Microsoft.Extensions.Configuration.FileExtensions": {
+              "target": "Package",
+              "version": "[10.0.0, )"
+            },
+            "Microsoft.Extensions.Configuration.Json": {
+              "target": "Package",
+              "version": "[10.0.0, )"
             },
             "Oracle.EntityFrameworkCore": {
               "target": "Package",
@@ -146,7 +144,7 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\9.0.200/PortableRuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\8.0.416/PortableRuntimeIdentifierGraph.json"
         }
       }
     }

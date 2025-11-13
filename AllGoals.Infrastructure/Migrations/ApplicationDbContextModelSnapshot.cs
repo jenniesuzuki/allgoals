@@ -81,7 +81,7 @@ namespace AllGoals.Infrastructure.Migrations
                     OraclePropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("Id"));
 
                     b.Property<bool>("IsAdmin")
-                        .HasColumnType("BOOLEAN");
+                        .HasColumnType("NUMBER(1)");
 
                     b.Property<string>("Nome")
                         .IsRequired()
