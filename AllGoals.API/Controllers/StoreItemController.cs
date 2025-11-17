@@ -15,15 +15,30 @@ public class StoreItemController : ControllerBase
             _storeItemService = storeItemService;
         }
 
+//        /// <summary>
+//        /// Obtém todos os itens da loja.
+//        /// </summary>
+//        [HttpGet]
+//        [ProducesResponseType(typeof(IEnumerable<StoreItemDtoResponse>), 200)]
+//        public async Task<IActionResult> GetStoreItems()
+//        {
+//            var items = await _storeItemService.ListAsync();
+//            return Ok(items);
+//        }
+
+
         /// <summary>
-        /// Obtém todos os itens da loja.
+        /// Obtém os itens da loja com paginação.
         /// </summary>
         [HttpGet]
-        [ProducesResponseType(typeof(IEnumerable<StoreItemDtoResponse>), 200)]
-        public async Task<IActionResult> GetStoreItems()
+        [ProducesResponseType(typeof(PagedResultDto<StoreItemDtoResponse>), 200)]
+        public async Task<IActionResult> GetStoreItems([FromQuery] PaginationQuery query)
         {
-            var items = await _storeItemService.ListAsync();
-            return Ok(items);
+            if (query.Page < 1 || query.PageSize < 1) 
+                return BadRequest("Parâmetros de paginação inválidos.");
+
+            var result = await _storeItemService.ListAsync(query);
+            return Ok(result);
         }
 
         /// <summary>

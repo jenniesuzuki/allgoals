@@ -11,6 +11,66 @@ public class GoalService : IGoalService
 
         public GoalService(IGoalRepository repo) => _repo = repo;
 
+        public async Task<PagedResultDto<GoalDtoResponse>> ListAsync(PaginationQuery query)
+        {
+            var (goals, totalCount) = await _repo.GetAllAsync(query.Page, query.PageSize);
+
+            var goalDtos = goals.Select(g =>
+            {
+                var dto = new GoalDtoResponse
+                {
+                    Id = g.Id,
+                    Titulo = g.Titulo,
+                    Descricao = g.Descricao,
+                    Xp = g.Xp,
+                    Moedas = g.Moedas
+                };
+                dto.Links.Add(new LinkDto { Rel = "self", Href = $"/api/goals/{dto.Id}", Method = "GET" });
+                return dto;
+            }).ToList();
+
+            var pagedResult = new PagedResultDto<GoalDtoResponse>
+            {
+                Items = goalDtos,
+                TotalCount = totalCount,
+                Page = query.Page,
+                PageSize = query.PageSize
+            };
+
+            AddPaginationLinks(pagedResult, "goals");
+
+            return pagedResult;
+        }
+
+        private void AddPaginationLinks<T>(PagedResultDto<T> result, string route)
+        {
+            result.Links.Add(new LinkDto 
+            { 
+                Rel = "self", 
+                Href = $"/api/{route}?page={result.Page}&pageSize={result.PageSize}", 
+                Method = "GET" 
+            });
+
+            if (result.Page < result.TotalPages)
+            {
+                result.Links.Add(new LinkDto 
+                { 
+                    Rel = "next", 
+                    Href = $"/api/{route}?page={result.Page + 1}&pageSize={result.PageSize}", 
+                    Method = "GET" 
+                });
+            }
+
+            if (result.Page > 1)
+            {
+                result.Links.Add(new LinkDto 
+                { 
+                    Rel = "previous", 
+                    Href = $"/api/{route}?page={result.Page - 1}&pageSize={result.PageSize}", 
+                    Method = "GET" 
+                });
+            }
+        }
         public async Task<GoalDtoResponse> CreateAsync(GoalDtoRequest dto)
         {
             var entity = new Goal(

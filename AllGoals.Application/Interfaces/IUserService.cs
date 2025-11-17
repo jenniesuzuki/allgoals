@@ -9,4 +9,5 @@ public interface IUserService
     Task<UserDtoResponse> CreateAsync(UserDtoRequest createRequestDto);
     Task<bool> UpdateAsync(int id, UserDtoRequest updateRequestDto);
     Task<bool> DeleteAsync(int id);
+    Task<PagedResultDto<UserDtoResponse>> ListAsync(PaginationQuery query);
 }

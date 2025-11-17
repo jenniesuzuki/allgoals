@@ -161,16 +161,11 @@ C:\Users\jenni\RiderProjects\AllGoals\AllGoals.API\bin\Debug\net8.0\runtimes\bro
 C:\Users\jenni\RiderProjects\AllGoals\AllGoals.API\obj\Debug\net8.0\AllGoals.API.sourcelink.json
 =======
 C:\Users\jenni\RiderProjects\allgoals\AllGoals.API\bin\Debug\net8.0\Microsoft.Extensions.Configuration.dll
-C:\Users\jenni\RiderProjects\allgoals\AllGoals.API\bin\Debug\net8.0\Microsoft.Extensions.Configuration.Abstractions.dll
 C:\Users\jenni\RiderProjects\allgoals\AllGoals.API\bin\Debug\net8.0\Microsoft.Extensions.Configuration.FileExtensions.dll
 C:\Users\jenni\RiderProjects\allgoals\AllGoals.API\bin\Debug\net8.0\Microsoft.Extensions.Configuration.Json.dll
-C:\Users\jenni\RiderProjects\allgoals\AllGoals.API\bin\Debug\net8.0\Microsoft.Extensions.FileProviders.Abstractions.dll
 C:\Users\jenni\RiderProjects\allgoals\AllGoals.API\bin\Debug\net8.0\Microsoft.Extensions.FileProviders.Physical.dll
 C:\Users\jenni\RiderProjects\allgoals\AllGoals.API\bin\Debug\net8.0\Microsoft.Extensions.FileSystemGlobbing.dll
-C:\Users\jenni\RiderProjects\allgoals\AllGoals.API\bin\Debug\net8.0\Microsoft.Extensions.Primitives.dll
-C:\Users\jenni\RiderProjects\allgoals\AllGoals.API\bin\Debug\net8.0\System.IO.Pipelines.dll
-C:\Users\jenni\RiderProjects\allgoals\AllGoals.API\bin\Debug\net8.0\System.Text.Encodings.Web.dll
-C:\Users\jenni\RiderProjects\allgoals\AllGoals.API\bin\Debug\net8.0\System.Text.Json.dll
-C:\Users\jenni\RiderProjects\allgoals\AllGoals.API\bin\Debug\net8.0\runtimes\browser\lib\net8.0\System.Text.Encodings.Web.dll
-C:\Users\jenni\RiderProjects\allgoals\AllGoals.API\obj\Debug\net8.0\AllGoals.API.sourcelink.json
 >>>>>>> cc2fcbcd9b6fea50ba55462da4464c829fc7f490
+C:\Users\jenni\RiderProjects\AllGoals\AllGoals.API\bin\Debug\net8.0\AllGoals.API.staticwebassets.endpoints.json
+C:\Users\jenni\RiderProjects\AllGoals\AllGoals.API\obj\Debug\net8.0\staticwebassets.build.endpoints.json
+C:\Users\jenni\RiderProjects\AllGoals\AllGoals.API\obj\Debug\net8.0\staticwebassets\msbuild.AllGoals.API.Microsoft.AspNetCore.StaticWebAssetEndpoints.props

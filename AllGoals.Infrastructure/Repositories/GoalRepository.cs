@@ -11,6 +11,17 @@ public class GoalRepository : IGoalRepository
 
     public GoalRepository(ApplicationDbContext ctx) => _ctx = ctx;
 
+    public async Task<(IEnumerable<Goal> Items, int TotalCount)> GetAllAsync(int page, int pageSize)
+    {
+        var totalCount = await _ctx.Goals.CountAsync();
+        var items = await _ctx.Goals
+            .AsNoTracking()
+            .Skip((page - 1) * pageSize)
+            .Take(pageSize)
+            .ToListAsync();
+
+        return (items, totalCount);
+    }
     public async Task<Goal?> GetByIdAsync(int id) => 
         await _ctx.Goals.FirstOrDefaultAsync(g => g.Id == id);
 

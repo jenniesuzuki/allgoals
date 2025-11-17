@@ -15,15 +15,29 @@ public class GoalController : ControllerBase
             _goalService = goalService;
         }
 
+//        /// <summary>
+//        /// Obtém as metas com paginação.
+//        /// </summary>
+//        [HttpGet]
+//        [ProducesResponseType(typeof(IEnumerable<GoalDtoResponse>), 200)]
+//        public async Task<IActionResult> GetGoals()
+//        {
+//            var goals = await _goalService.ListAsync();
+//            return Ok(goals);
+//        }
+
         /// <summary>
         /// Obtém todas as metas.
         /// </summary>
         [HttpGet]
-        [ProducesResponseType(typeof(IEnumerable<GoalDtoResponse>), 200)]
-        public async Task<IActionResult> GetGoals()
+        [ProducesResponseType(typeof(PagedResultDto<GoalDtoResponse>), 200)]
+        public async Task<IActionResult> GetGoals([FromQuery] PaginationQuery query)
         {
-            var goals = await _goalService.ListAsync();
-            return Ok(goals);
+            if (query.Page < 1 || query.PageSize < 1) 
+                return BadRequest("Parâmetros de paginação inválidos.");
+
+            var result = await _goalService.ListAsync(query);
+            return Ok(result);
         }
 
         /// <summary>

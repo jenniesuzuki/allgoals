@@ -4,6 +4,7 @@ namespace AllGoals.Application.Interfaces;
 
 public interface IStoreItemService
 {
+    Task<PagedResultDto<StoreItemDtoResponse>> ListAsync(PaginationQuery query);
     Task<IEnumerable<StoreItemDtoResponse>> ListAsync();
     Task<StoreItemDtoResponse?> GetByIdAsync(int id);
     Task<StoreItemDtoResponse> CreateAsync(StoreItemDtoRequest createRequestDto);

@@ -11,6 +11,17 @@ public class StoreItemRepository : IStoreItemRepository
 
     public StoreItemRepository(ApplicationDbContext ctx) => _ctx = ctx;
 
+    public async Task<(IEnumerable<StoreItem> Items, int TotalCount)> GetAllAsync(int page, int pageSize)
+    {
+        var totalCount = await _ctx.StoreItems.CountAsync(); 
+        var items = await _ctx.StoreItems
+            .AsNoTracking()
+            .Skip((page - 1) * pageSize)
+            .Take(pageSize)
+            .ToListAsync();
+
+        return (items, totalCount);
+    }
     public async Task<StoreItem?> GetByIdAsync(int id) => 
         await _ctx.StoreItems.FirstOrDefaultAsync(s => s.Id == id);
 

@@ -15,15 +15,33 @@ public class UserController : ControllerBase
             _userService = userService;
         }
 
+//        /// <summary>
+//        /// Obtém todos os usuários.
+//        /// </summary>
+//        [HttpGet]
+//        [ProducesResponseType(typeof(IEnumerable<UserDtoResponse>), 200)]
+//        public async Task<IActionResult> GetUsers()
+//        {
+//            var users = await _userService.ListAsync();
+//            return Ok(users);
+//        }
+
+        
         /// <summary>
-        /// Obtém todos os usuários.
+        /// Obtém usuários com paginação.
         /// </summary>
         [HttpGet]
-        [ProducesResponseType(typeof(IEnumerable<UserDtoResponse>), 200)]
-        public async Task<IActionResult> GetUsers()
+        [ProducesResponseType(typeof(PagedResultDto<UserDtoResponse>), 200)]
+        [ProducesResponseType(400)]
+        public async Task<IActionResult> GetUsers([FromQuery] PaginationQuery query)
         {
-            var users = await _userService.ListAsync();
-            return Ok(users);
+            if (query.Page < 1 || query.PageSize < 1)
+            {
+                return BadRequest("Page e PageSize devem ser maiores que zero.");
+            }
+
+            var result = await _userService.ListAsync(query);
+            return Ok(result);
         }
 
         /// <summary>
@@ -91,4 +109,5 @@ public class UserController : ControllerBase
 
             return NoContent();
         }
+
 }

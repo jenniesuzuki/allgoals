@@ -38,4 +38,17 @@ public class UserRepository : IUserRepository
             await _ctx.SaveChangesAsync(); 
         }
     }
+
+    public async Task<(IEnumerable<User> Items, int TotalCount)> GetAllAsync(int page, int pageSize)
+    {
+        var totalCount = await _ctx.Users.CountAsync();
+
+        var items = await _ctx.Users
+            .AsNoTracking() 
+            .Skip((page - 1) * pageSize)
+            .Take(pageSize)
+            .ToListAsync();
+
+        return (items, totalCount);
+    }
 }

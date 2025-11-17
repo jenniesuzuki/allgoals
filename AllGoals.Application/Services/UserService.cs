@@ -124,4 +124,65 @@ public class UserService : IUserService
                 Method = "DELETE"
             });
         }
+
+        public async Task<PagedResultDto<UserDtoResponse>> ListAsync(PaginationQuery query)
+        {
+            var (users, totalCount) = await _repo.GetAllAsync(query.Page, query.PageSize);
+
+            var userDtos = users.Select(u => 
+            {
+                var dto = new UserDtoResponse
+                {
+                    Id = u.Id,
+                    Nome = u.Nome,
+                    Email = u.Email.Value,
+                    IsAdmin = u.IsAdmin
+                };
+
+                dto.Links.Add(new LinkDto { Rel = "self", Href = $"/api/users/{u.Id}", Method = "GET" });
+                return dto;
+            }).ToList();
+
+            var pagedResult = new PagedResultDto<UserDtoResponse>
+            {
+                Items = userDtos,
+                TotalCount = totalCount,
+                Page = query.Page,
+                PageSize = query.PageSize
+            };
+
+            AddPaginationLinks(pagedResult, "users");
+
+            return pagedResult;
+        }
+
+        private void AddPaginationLinks<T>(PagedResultDto<T> result, string route)
+        {
+            result.Links.Add(new LinkDto 
+            { 
+                Rel = "self", 
+                Href = $"/api/{route}?page={result.Page}&pageSize={result.PageSize}", 
+                Method = "GET" 
+            });
+
+            if (result.Page < result.TotalPages) 
+            {
+                result.Links.Add(new LinkDto 
+                { 
+                    Rel = "next", 
+                    Href = $"/api/{route}?page={result.Page + 1}&pageSize={result.PageSize}", 
+                    Method = "GET" 
+                });
+            }
+
+            if (result.Page > 1) 
+            {
+                result.Links.Add(new LinkDto 
+                { 
+                    Rel = "previous", 
+                    Href = $"/api/{route}?page={result.Page - 1}&pageSize={result.PageSize}", 
+                    Method = "GET" 
+                });
+            }
+        }
 }
