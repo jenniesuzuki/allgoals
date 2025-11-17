@@ -15,19 +15,23 @@ public class StoreItemService : IStoreItemService
         {
             var entity = new StoreItem(
                 dto.Nome,
-                dto.Descricao,
+                dto.Descricao ?? string.Empty, 
                 dto.Valor
             );
 
             await _repo.AddAsync(entity);
 
-            return new StoreItemDtoResponse
+            var responseDto = new StoreItemDtoResponse
             {
                 Id = entity.Id,
                 Nome = entity.Nome,
                 Descricao = entity.Descricao,
                 Valor = entity.Valor
             };
+
+            AddStoreItemLinks(responseDto);
+
+            return responseDto;
         }
 
         public async Task<bool> UpdateAsync(int id, StoreItemDtoRequest dto)
@@ -37,7 +41,7 @@ public class StoreItemService : IStoreItemService
                 return false;
 
             entity.AlterarNome(dto.Nome);
-            entity.AlterarDescricao(dto.Descricao);
+            entity.AlterarDescricao(dto.Descricao ?? string.Empty);
             entity.AlterarValor(dto.Valor);
 
             await _repo.UpdateAsync(entity);
@@ -50,25 +54,40 @@ public class StoreItemService : IStoreItemService
             if (entity is null)
                 return null;
 
-            return new StoreItemDtoResponse
+            var responseDto = new StoreItemDtoResponse
             {
                 Id = entity.Id,
                 Nome = entity.Nome,
                 Descricao = entity.Descricao,
                 Valor = entity.Valor
             };
+
+            AddStoreItemLinks(responseDto);
+
+            return responseDto;
         }
 
         public async Task<IEnumerable<StoreItemDtoResponse>> ListAsync()
         {
             var list = await _repo.ListAsync();
-
-            return list.Select(m => new StoreItemDtoResponse
+            return list.Select(entity =>
             {
-                Id = m.Id,
-                Nome = m.Nome,
-                Descricao = m.Descricao,
-                Valor = m.Valor
+                var dto = new StoreItemDtoResponse
+                {
+                    Id = entity.Id,
+                    Nome = entity.Nome,
+                    Descricao = entity.Descricao,
+                    Valor = entity.Valor
+                };
+                
+                dto.Links.Add(new LinkDto
+                {
+                    Rel = "self",
+                    Href = $"/api/storeitems/{entity.Id}",
+                    Method = "GET"
+                });
+
+                return dto;
             }).ToList();
         }
 
@@ -80,5 +99,29 @@ public class StoreItemService : IStoreItemService
 
             await _repo.DeleteAsync(id); 
             return true;
+        }
+
+        private void AddStoreItemLinks(StoreItemDtoResponse dto)
+        {
+            var id = dto.Id;
+            
+            dto.Links.Add(new LinkDto
+            {
+                Rel = "self",
+                Href = $"/api/storeitems/{id}",
+                Method = "GET"
+            });
+            dto.Links.Add(new LinkDto
+            {
+                Rel = "update",
+                Href = $"/api/storeitems/{id}",
+                Method = "PUT"
+            });
+            dto.Links.Add(new LinkDto
+            {
+                Rel = "delete",
+                Href = $"/api/storeitems/{id}",
+                Method = "DELETE"
+            });
         }
 }

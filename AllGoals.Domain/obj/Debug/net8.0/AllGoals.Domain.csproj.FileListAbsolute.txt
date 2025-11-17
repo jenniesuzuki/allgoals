@@ -9,4 +9,8 @@ C:\Users\jenni\RiderProjects\AllGoals\AllGoals.Domain\obj\Debug\net8.0\AllGoals.
 C:\Users\jenni\RiderProjects\AllGoals\AllGoals.Domain\obj\Debug\net8.0\refint\AllGoals.Domain.dll
 C:\Users\jenni\RiderProjects\AllGoals\AllGoals.Domain\obj\Debug\net8.0\AllGoals.Domain.pdb
 C:\Users\jenni\RiderProjects\AllGoals\AllGoals.Domain\obj\Debug\net8.0\ref\AllGoals.Domain.dll
+<<<<<<< HEAD
 C:\Users\jenni\RiderProjects\AllGoals\AllGoals.Domain\obj\Debug\net8.0\AllGoals.Domain.sourcelink.json
+=======
+C:\Users\jenni\RiderProjects\allgoals\AllGoals.Domain\obj\Debug\net8.0\AllGoals.Domain.sourcelink.json
+>>>>>>> cc2fcbcd9b6fea50ba55462da4464c829fc7f490

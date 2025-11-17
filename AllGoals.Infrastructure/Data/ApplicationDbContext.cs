@@ -11,27 +11,18 @@ public class ApplicationDbContext : DbContext
     public DbSet<Goal> Goals => Set<Goal>();
     public DbSet<StoreItem> StoreItems => Set<StoreItem>();
 
-
     protected override void OnModelCreating(ModelBuilder modelBuilder)
     {
         base.OnModelCreating(modelBuilder);
-
         modelBuilder.Entity<User>(b =>
         {
             b.OwnsOne(u => u.Email, eo =>
             {
                 eo.Property(e => e.Value).HasColumnName("Email").IsRequired();
             });
-        });
-
-        modelBuilder.Entity<Goal>(b =>
-        {
-
-        });
-
-        modelBuilder.Entity<StoreItem>(b =>
-        {
-
+            b.Property(u => u.IsAdmin)
+                .HasColumnType("NUMBER(1)"); 
         });
     }
+
 }

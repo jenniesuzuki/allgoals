@@ -15,14 +15,14 @@ public class GoalService : IGoalService
         {
             var entity = new Goal(
                 dto.Titulo,
-                dto.Descricao,
+                dto.Descricao ?? string.Empty, 
                 dto.Xp,
                 dto.Moedas
             );
 
             await _repo.AddAsync(entity);
             
-            return new GoalDtoResponse
+            var responseDto = new GoalDtoResponse
             {
                 Id = entity.Id,
                 Titulo = entity.Titulo,
@@ -30,6 +30,9 @@ public class GoalService : IGoalService
                 Xp = entity.Xp,
                 Moedas = entity.Moedas
             };
+            AddGoalLinks(responseDto);
+
+            return responseDto;
         }
 
         public async Task<bool> UpdateAsync(int id, GoalDtoRequest dto)
@@ -39,7 +42,7 @@ public class GoalService : IGoalService
                 return false;
 
             entity.AlterarTitulo(dto.Titulo);
-            entity.AlterarDescricao(dto.Descricao);
+            entity.AlterarDescricao(dto.Descricao ?? string.Empty);
             entity.AlterarRecompensas(dto.Xp, dto.Moedas);
 
             await _repo.UpdateAsync(entity);
@@ -52,7 +55,7 @@ public class GoalService : IGoalService
             if (entity is null) 
                 return null;
 
-            return new GoalDtoResponse
+            var responseDto = new GoalDtoResponse
             {
                 Id = entity.Id,
                 Titulo = entity.Titulo,
@@ -60,19 +63,35 @@ public class GoalService : IGoalService
                 Xp = entity.Xp,
                 Moedas = entity.Moedas
             };
+
+            AddGoalLinks(responseDto);
+
+            return responseDto;
         }
 
         public async Task<IEnumerable<GoalDtoResponse>> ListAsync()
         {
             var list = await _repo.ListAsync();
 
-            return list.Select(m => new GoalDtoResponse
+            return list.Select(entity =>
             {
-                Id = m.Id,
-                Titulo = m.Titulo,
-                Descricao = m.Descricao,
-                Xp = m.Xp,
-                Moedas = m.Moedas
+                var dto = new GoalDtoResponse
+                {
+                    Id = entity.Id,
+                    Titulo = entity.Titulo,
+                    Descricao = entity.Descricao,
+                    Xp = entity.Xp,
+                    Moedas = entity.Moedas
+                };
+
+                dto.Links.Add(new LinkDto
+                {
+                    Rel = "self",
+                    Href = $"/api/goals/{entity.Id}",
+                    Method = "GET"
+                });
+
+                return dto;
             }).ToList();
         }
 
@@ -84,5 +103,29 @@ public class GoalService : IGoalService
 
             await _repo.DeleteAsync(id);
             return true;
+        }
+
+        private void AddGoalLinks(GoalDtoResponse dto)
+        {
+            var id = dto.Id;
+            
+            dto.Links.Add(new LinkDto
+            {
+                Rel = "self",
+                Href = $"/api/goals/{id}",
+                Method = "GET"
+            });
+            dto.Links.Add(new LinkDto
+            {
+                Rel = "update",
+                Href = $"/api/goals/{id}",
+                Method = "PUT"
+            });
+            dto.Links.Add(new LinkDto
+            {
+                Rel = "delete",
+                Href = $"/api/goals/{id}",
+                Method = "DELETE"
+            });
         }
 }

@@ -13,7 +13,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("AllGoals.API")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+9e1a94d79fc404cc137f6b1955c6f111f7e94946")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+bb61ec7bb7be2f612d76f955f145dc2dabbd7bba")]
 [assembly: System.Reflection.AssemblyProductAttribute("AllGoals.API")]
 [assembly: System.Reflection.AssemblyTitleAttribute("AllGoals.API")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]

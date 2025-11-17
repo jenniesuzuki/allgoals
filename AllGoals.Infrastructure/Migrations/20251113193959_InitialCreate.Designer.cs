@@ -11,8 +11,8 @@ using Oracle.EntityFrameworkCore.Metadata;
 namespace AllGoals.Infrastructure.Migrations
 {
     [DbContext(typeof(ApplicationDbContext))]
-    [Migration("20251113142239_Initial")]
-    partial class Initial
+    [Migration("20251113193959_InitialCreate")]
+    partial class InitialCreate
     {
         /// <inheritdoc />
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
@@ -84,7 +84,7 @@ namespace AllGoals.Infrastructure.Migrations
                     OraclePropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("Id"));
 
                     b.Property<bool>("IsAdmin")
-                        .HasColumnType("BOOLEAN");
+                        .HasColumnType("NUMBER(1)");
 
                     b.Property<string>("Nome")
                         .IsRequired()

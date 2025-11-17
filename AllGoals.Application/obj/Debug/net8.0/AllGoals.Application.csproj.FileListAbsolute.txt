@@ -13,4 +13,8 @@ C:\Users\jenni\RiderProjects\AllGoals\AllGoals.Application\obj\Debug\net8.0\AllG
 C:\Users\jenni\RiderProjects\AllGoals\AllGoals.Application\obj\Debug\net8.0\refint\AllGoals.Application.dll
 C:\Users\jenni\RiderProjects\AllGoals\AllGoals.Application\obj\Debug\net8.0\AllGoals.Application.pdb
 C:\Users\jenni\RiderProjects\AllGoals\AllGoals.Application\obj\Debug\net8.0\ref\AllGoals.Application.dll
+<<<<<<< HEAD
 C:\Users\jenni\RiderProjects\AllGoals\AllGoals.Application\obj\Debug\net8.0\AllGoals.Application.sourcelink.json
+=======
+C:\Users\jenni\RiderProjects\allgoals\AllGoals.Application\obj\Debug\net8.0\AllGoals.Application.sourcelink.json
+>>>>>>> cc2fcbcd9b6fea50ba55462da4464c829fc7f490
