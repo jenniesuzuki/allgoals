@@ -185,4 +185,22 @@ public class UserService : IUserService
                 });
             }
         }
+        
+        public async Task PromoteToAdminAsync(int id)
+        {
+            var entity = await _repo.GetByIdAsync(id);
+            if (entity is null) return;
+
+            entity.PromoverParaAdmin();
+            await _repo.UpdateAsync(entity);
+        }
+
+        public async Task RevokeAdminAsync(int id)
+        {
+            var entity = await _repo.GetByIdAsync(id);
+            if (entity is null) return;
+
+            entity.RevogarAdmin();
+            await _repo.UpdateAsync(entity);
+        }
 }

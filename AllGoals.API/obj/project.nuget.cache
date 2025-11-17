@@ -1,9 +1,13 @@
 {
   "version": 2,
-  "dgSpecHash": "y+MO8H5c0cg=",
+  "dgSpecHash": "7kFVzICx8AA=",
   "success": true,
   "projectFilePath": "C:\\Users\\jenni\\RiderProjects\\AllGoals\\AllGoals.API\\AllGoals.API.csproj",
   "expectedPackageFiles": [
+    "C:\\Users\\jenni\\.nuget\\packages\\asp.versioning.abstractions\\8.1.0\\asp.versioning.abstractions.8.1.0.nupkg.sha512",
+    "C:\\Users\\jenni\\.nuget\\packages\\asp.versioning.http\\8.1.0\\asp.versioning.http.8.1.0.nupkg.sha512",
+    "C:\\Users\\jenni\\.nuget\\packages\\asp.versioning.mvc\\8.1.0\\asp.versioning.mvc.8.1.0.nupkg.sha512",
+    "C:\\Users\\jenni\\.nuget\\packages\\asp.versioning.mvc.apiexplorer\\8.1.0\\asp.versioning.mvc.apiexplorer.8.1.0.nupkg.sha512",
     "C:\\Users\\jenni\\.nuget\\packages\\aspnetcore.healthchecks.oracle\\9.0.0\\aspnetcore.healthchecks.oracle.9.0.0.nupkg.sha512",
     "C:\\Users\\jenni\\.nuget\\packages\\aspnetcore.healthchecks.ui.client\\9.0.0\\aspnetcore.healthchecks.ui.client.9.0.0.nupkg.sha512",
     "C:\\Users\\jenni\\.nuget\\packages\\aspnetcore.healthchecks.ui.core\\9.0.0\\aspnetcore.healthchecks.ui.core.9.0.0.nupkg.sha512",
@@ -93,15 +97,5 @@
     "C:\\Users\\jenni\\.nuget\\packages\\system.text.json\\10.0.0\\system.text.json.10.0.0.nupkg.sha512",
     "C:\\Users\\jenni\\.nuget\\packages\\system.threading.channels\\6.0.0\\system.threading.channels.6.0.0.nupkg.sha512"
   ],
-  "logs": [
-    {
-      "code": "Undefined",
-      "level": "Warning",
-      "message": "Problem reading the cache file C:\\Users\\jenni\\RiderProjects\\AllGoals\\AllGoals.API\\obj\\project.nuget.cache : '<' is an invalid start of a property name. Expected a '\"'. Path: $ | LineNumber: 2 | BytePositionInLine: 0.",
-      "projectPath": "C:\\Users\\jenni\\RiderProjects\\AllGoals\\AllGoals.API\\AllGoals.API.csproj",
-      "warningLevel": 1,
-      "filePath": "C:\\Users\\jenni\\RiderProjects\\AllGoals\\AllGoals.API\\AllGoals.API.csproj",
-      "targetGraphs": []
-    }
-  ]
+  "logs": []
 }

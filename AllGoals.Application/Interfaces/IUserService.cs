@@ -10,4 +10,7 @@ public interface IUserService
     Task<bool> UpdateAsync(int id, UserDtoRequest updateRequestDto);
     Task<bool> DeleteAsync(int id);
     Task<PagedResultDto<UserDtoResponse>> ListAsync(PaginationQuery query);
+    
+    Task PromoteToAdminAsync(int id);
+    Task RevokeAdminAsync(int id);
 }

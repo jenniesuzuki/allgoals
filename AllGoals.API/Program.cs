@@ -3,6 +3,7 @@ using AllGoals.Application.Services;
 using AllGoals.Domain.Interfaces;
 using AllGoals.Infrastructure.Data;
 using AllGoals.Infrastructure.Repositories;
+using Asp.Versioning;
 using HealthChecks.UI.Client;
 using Microsoft.AspNetCore.Diagnostics.HealthChecks;
 using Microsoft.EntityFrameworkCore;
@@ -34,7 +35,25 @@ try
 
     builder.Services.AddControllers();
     builder.Services.AddEndpointsApiExplorer();
-    builder.Services.AddSwaggerGen();
+//    builder.Services.AddSwaggerGen();
+    builder.Services.AddSwaggerGen(options =>
+    {
+        options.SwaggerDoc("v1", new Microsoft.OpenApi.Models.OpenApiInfo 
+        { 
+            Title = "AllGoals API - V1", 
+            Version = "v1",
+            Description = "Versão estável básica."
+        });
+
+        options.SwaggerDoc("v2", new Microsoft.OpenApi.Models.OpenApiInfo 
+        { 
+            Title = "AllGoals API - V2", 
+            Version = "v2",
+            Description = "Versão avançada com gestão de administradores."
+        });
+
+        options.CustomSchemaIds(type => type.ToString());
+    });
 
     var connectionString = builder.Configuration.GetConnectionString("DefaultConnection");
 
@@ -56,13 +75,34 @@ try
     builder.Services.AddScoped<IGoalService, GoalService>();
     builder.Services.AddScoped<IUserService, UserService>();
     builder.Services.AddScoped<IStoreItemService, StoreItemService>();
+    
+    builder.Services.AddApiVersioning(options =>
+        {
+            options.DefaultApiVersion = new ApiVersion(1, 0);
+
+            options.AssumeDefaultVersionWhenUnspecified = true;
+
+            options.ReportApiVersions = true;
+
+            options.ApiVersionReader = new UrlSegmentApiVersionReader();
+        })
+        .AddApiExplorer(options =>
+        {
+            options.GroupNameFormat = "'v'VVV";
+
+            options.SubstituteApiVersionInUrl = true;
+        });
 
     var app = builder.Build();
 
     if (app.Environment.IsDevelopment())
     {
         app.UseSwagger();
-        app.UseSwaggerUI();
+        app.UseSwaggerUI(options => 
+        {
+            options.SwaggerEndpoint("/swagger/v1/swagger.json", "AllGoals API v1");
+            options.SwaggerEndpoint("/swagger/v2/swagger.json", "AllGoals V2");
+        });
     }
 
     app.UseHttpsRedirection();

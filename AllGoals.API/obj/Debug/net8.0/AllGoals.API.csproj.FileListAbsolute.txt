@@ -169,3 +169,7 @@ C:\Users\jenni\RiderProjects\allgoals\AllGoals.API\bin\Debug\net8.0\Microsoft.Ex
 C:\Users\jenni\RiderProjects\AllGoals\AllGoals.API\bin\Debug\net8.0\AllGoals.API.staticwebassets.endpoints.json
 C:\Users\jenni\RiderProjects\AllGoals\AllGoals.API\obj\Debug\net8.0\staticwebassets.build.endpoints.json
 C:\Users\jenni\RiderProjects\AllGoals\AllGoals.API\obj\Debug\net8.0\staticwebassets\msbuild.AllGoals.API.Microsoft.AspNetCore.StaticWebAssetEndpoints.props
+C:\Users\jenni\RiderProjects\AllGoals\AllGoals.API\bin\Debug\net8.0\Asp.Versioning.Abstractions.dll
+C:\Users\jenni\RiderProjects\AllGoals\AllGoals.API\bin\Debug\net8.0\Asp.Versioning.Http.dll
+C:\Users\jenni\RiderProjects\AllGoals\AllGoals.API\bin\Debug\net8.0\Asp.Versioning.Mvc.dll
+C:\Users\jenni\RiderProjects\AllGoals\AllGoals.API\bin\Debug\net8.0\Asp.Versioning.Mvc.ApiExplorer.dll
