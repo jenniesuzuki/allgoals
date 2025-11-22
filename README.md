@@ -2,7 +2,7 @@
 
 ## Projeto: API RESTful de Gestão de Metas e Recompensas
 
-Este projeto foi desenvolvido para o **Global Solution** da disciplina **Advanced Business Development with .NET**. O objetivo é fornecer uma **API RESTful** robusta e escalável para gamificação de tarefas, utilizando **.NET 8**, **SQL Server** e um pipeline completo de **CI/CD no Azure DevOps**.
+Este projeto foi desenvolvido para o **Global Solution** da disciplina **Advanced Business Development with .NET**. O objetivo é fornecer uma **API RESTful** robusta e escalável para gamificação de tarefas, utilizando **.NET 8** e **Oracle**.
 
 ## 👨‍💻 Integrantes
 
